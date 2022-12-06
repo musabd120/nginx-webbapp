@@ -11,5 +11,12 @@ docker build -t nginx-webbapp:1.0 .
 To run the app locally
 
 ```bash
-docker run -d -p 8080:80 nginx-webbapp:1.0
+docker run --name demo_webapp -d -p 8080:80 nginx-webbapp:1.0
+```
+
+To remove the container
+
+```bash
+docker stop demo_webapp
+docker rm demo_webapp
 ```
