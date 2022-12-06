@@ -7,3 +7,9 @@ Run this to build your image
 ```bash
 docker build -t nginx-webbapp:1.0 .
 ```
+
+To run the app locally
+
+```bash
+docker run -d -p 8080:80 nginx-webbapp:1.0
+```
