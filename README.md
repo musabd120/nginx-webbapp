@@ -27,6 +27,17 @@ Next thing is to push the image to [hub.docker.com](https://hub.docker.com)
 docker tag nginx-webbapp:1.0 docker.io/crackitty/nginx-webbapp:1.0
 ```
 
+Push the image to dockerhub
+
+```bash
+docker push docker.io/crackitty/nginx-webbapp:1.0
+```
+
+> Note: You probably won't be able to push to the `crackitty` user account but you
+> can always use your own dockerhub account to push the images to.
+> Also Note: remember to make the image **public** or you won't be able to pull it down
+> when you run it in Kubernetes.
+
 Note: If you're using an M1 Mac - be careful, you need to build your image for
 the following architecture
 
