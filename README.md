@@ -20,3 +20,46 @@ To remove the container
 docker stop demo_webapp
 docker rm demo_webapp
 ```
+
+Next thing is to push the image to [hub.docker.com](https://hub.docker.com)
+
+```bash
+docker tag nginx-webbapp:1.0 docker.io/crackitty/nginx-webbapp:1.0
+```
+
+Push the image to dockerhub
+
+```bash
+docker push docker.io/crackitty/nginx-webbapp:1.0
+```
+
+> Note: You probably won't be able to push to the `crackitty` user account but you
+> can always use your own dockerhub account to push the images to.
+> Also Note: remember to make the image **public** or you won't be able to pull it down
+> when you run it in Kubernetes.
+
+Note: If you're using an M1 Mac - be careful, you need to build your image for
+the following architecture
+
+```bash
+docker buildx build --platform linux/amd64 -t nginx-webbapp:1.0 .
+```
+
+Next thing is to deploy our container in a Pod in Kubernetes. So you will need to
+connect to a Kubernetes cluster (wo, whatever one you have access to)
+
+```bash
+kubectl apply -f k8s/pod.yaml
+```
+
+This should run the pod on a worker node on your cluster.
+
+You can check the progress using
+
+```bash
+kubectl get pods
+# or
+kubectl describe pod my-pod
+# or
+kubectl logs my-pod
+```
