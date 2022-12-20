@@ -275,7 +275,7 @@ body {
   }
 }
 
-/* Small <= 768px */
+/* Less/Small <= 768px */
 @media screen and (max-width: 768px) {
   .main-cards {
     grid-template-columns: 1fr;

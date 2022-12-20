@@ -17,7 +17,7 @@ function closeSidebar() {
 
 // ---------- CHARTS ----------
 
-// BAR CHART
+// RADAR CHART
 var barChartOptions = {
   series: [
     {
@@ -62,7 +62,7 @@ var barChart = new ApexCharts(
 )
 barChart.render()
 
-// AREA CHART
+// BAR CHART
 var areaChartOptions = {
   series: [
     {
